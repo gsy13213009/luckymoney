@@ -11,9 +11,9 @@ limit:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/luckymoney
+    url: jdbc:mysql://127.0.0.1:3306/luckymoney?characterEncoding=utf-8
     username: gsy
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
