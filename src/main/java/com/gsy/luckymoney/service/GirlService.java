@@ -1,6 +1,7 @@
 package com.gsy.luckymoney.service;
 
 import com.gsy.luckymoney.domain.Girl;
+import com.gsy.luckymoney.exception.GirlException;
 import com.gsy.luckymoney.repository.GirlRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,10 +24,22 @@ public class GirlService {
         girlA.setAge(18);
         girlRepository.save(girlA);
 
-
         Girl girlB = new Girl();
         girlB.setCupSize("BBBB");
         girlB.setAge(19);
         girlRepository.save(girlB);
+    }
+
+    public void getAge(Integer id) throws Exception {
+        Girl girl = girlRepository.findById(id).orElse(null);
+        if (girl == null) {
+            return;
+        }
+        Integer age = girl.getAge();
+        if (age < 10) {
+            throw new GirlException(100, "你还在小学吧");
+        } else if (age < 16) {
+            throw new GirlException(101, "你可能在上初中");
+        }
     }
 }

@@ -40,7 +40,6 @@ public class GirlController {
 
     /**
      * 添加一个女生
-     * @return
      */
     @PostMapping(value = "/girls")
     public Result girlAdd(@Valid Girl girl, BindingResult bindingResult) {
@@ -84,5 +83,10 @@ public class GirlController {
     @PostMapping(value = "/girls/two")
     public void girlTwo() {
         girlService.insertTwo();
+    }
+
+    @GetMapping(value = "girls/getAge/{id}")
+    public void getAge(@PathVariable("id") Integer id) throws Exception {
+        girlService.getAge(id);
     }
 }
