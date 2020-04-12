@@ -1,5 +1,7 @@
-package com.gsy.luckymoney;
+package com.gsy.luckymoney.service;
 
+import com.gsy.luckymoney.domain.Luckymoney;
+import com.gsy.luckymoney.repository.LuckymoneyRepository;
 import java.math.BigDecimal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

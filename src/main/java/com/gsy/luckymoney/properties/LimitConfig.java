@@ -1,4 +1,4 @@
-package com.gsy.luckymoney;
+package com.gsy.luckymoney.properties;
 
 import java.math.BigDecimal;
 import org.springframework.boot.context.properties.ConfigurationProperties;

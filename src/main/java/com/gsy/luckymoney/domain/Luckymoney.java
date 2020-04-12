@@ -1,4 +1,4 @@
-package com.gsy.luckymoney;
+package com.gsy.luckymoney.domain;
 
 import java.math.BigDecimal;
 import javax.persistence.Entity;
