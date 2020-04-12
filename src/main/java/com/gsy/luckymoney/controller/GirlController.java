@@ -1,8 +1,10 @@
 package com.gsy.luckymoney.controller;
 
 import com.gsy.luckymoney.domain.Girl;
+import com.gsy.luckymoney.domain.Result;
 import com.gsy.luckymoney.repository.GirlRepository;
 import com.gsy.luckymoney.service.GirlService;
+import com.gsy.luckymoney.utils.ResultUtil;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,14 +40,14 @@ public class GirlController {
 
     /**
      * 添加一个女生
+     * @return
      */
     @PostMapping(value = "/girls")
-    public Girl girlAdd(@Valid Girl girl, BindingResult bindingResult) {
+    public Result girlAdd(@Valid Girl girl, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            System.out.println(bindingResult.getFieldError().getDefaultMessage());
-            return null;
+            return ResultUtil.error(1, bindingResult.getFieldError().getDefaultMessage());
         }
-        return girlRepository.save(girl);
+        return ResultUtil.success(girlRepository.save(girl));
     }
 
     //查询一个女生
