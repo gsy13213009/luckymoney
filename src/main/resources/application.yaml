@@ -3,5 +3,7 @@ server:
   servlet:
     context-path: /luckymoney
 
-minMoney: 2
-description: 最少要发${minMoney}元
+limit:
+  minMoney: 2
+  maxMoney: 100
+  description: 最少要发${limit.minMoney}元，最多${limit.maxMoney}元
