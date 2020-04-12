@@ -1,6 +1,6 @@
 package com.gsy.luckymoney.service;
 
-import Girl;
+import com.gsy.luckymoney.domain.Girl;
 import com.gsy.luckymoney.repository.GirlRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
